@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/fileName_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="File name:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/file_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+        <Constraint
+            android:id="@+id/status_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="Status:"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/ok_button"
+            app:layout_constraintEnd_toStartOf="@+id/status"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileName_TextView"
+            app:layout_constraintVertical_bias="0.200" />
+        <Constraint
+            android:id="@+id/file_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="TextView"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fileName_TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fileName_TextView" />
+        <Constraint
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="TextView"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/status_TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/status_TextView" />
+        <Constraint
+            android:id="@+id/ok_button"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:backgroundTint="@color/gold"
+            android:text="OK"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/fileName_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="File name:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/file_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+        <Constraint
+            android:id="@+id/status_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:text="Status:"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/ok_button"
+            app:layout_constraintEnd_toStartOf="@+id/status"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileName_TextView"
+            app:layout_constraintVertical_bias="0.200" />
+        <Constraint
+            android:id="@+id/file_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="TextView"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fileName_TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fileName_TextView" />
+        <Constraint
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="TextView"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/status_TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/status_TextView" />
+        <Constraint
+            android:id="@+id/ok_button"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:backgroundTint="@color/gold"
+            android:text="OK"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/main_to_detail"
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="2000"/>
+</MotionScene>

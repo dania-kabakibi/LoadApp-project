@@ -9,8 +9,6 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import java.util.*
-import kotlin.concurrent.schedule
 
 enum class Text(val text: Int) {
     LOADING(R.string.button_loading),
@@ -38,7 +36,7 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
 
     private var sweepAngle = 0f
     private val maxSweepAngle = 360f
-    private val animationDuration = 1500L
+    private val animationDuration = 2000L
 
     private var currentWidth = 0f
     private var targetWidth = 0f
@@ -129,7 +127,6 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
                 0f, sweepAngle, true, circlePaint
             )
         }
-        if (state == State.LOADING) reset()
     }
 
     //_________________________________________________________________________
@@ -144,6 +141,7 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
         ValueAnimator.ofFloat(0f, maxSweepAngle).apply {
             duration = animationDuration
             repeatMode = ValueAnimator.RESTART
+            repeatCount = ValueAnimator.INFINITE
             addUpdateListener { animator ->
                 sweepAngle = animator.animatedValue as Float
                 invalidate()
@@ -153,9 +151,19 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
                     button.isEnabled = false
                 }
 
-                override fun onAnimationEnd(animation: Animator) {
-                    button.isEnabled = true
+                override fun onAnimationRepeat(animation: Animator) {
+                    if (downloadCompleted) {
+                        animation.end()
+                        state = State.COMPLETED
+                        resetText()
+                        button.isEnabled = true
+                    }
                 }
+                /*override fun onAnimationEnd(animation: Animator) {
+                    state = State.COMPLETED
+                    resetText()
+                    button.isEnabled = true
+                }*/
             })
         }.start()
     }
@@ -164,6 +172,7 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
         ValueAnimator.ofFloat(0f, targetWidth).apply {
             duration = animationDuration
             repeatMode = ValueAnimator.RESTART
+            repeatCount = ValueAnimator.INFINITE
             addUpdateListener { animator ->
                 currentWidth = animator.animatedValue as Float
                 invalidate()
@@ -173,9 +182,20 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
                     button.isEnabled = false
                 }
 
-                override fun onAnimationEnd(animation: Animator) {
-                    button.isEnabled = true
+                override fun onAnimationRepeat(animation: Animator) {
+                    if (downloadCompleted) {
+                        animation.end()
+                        state = State.COMPLETED
+                        resetText()
+                        button.isEnabled = true
+                    }
                 }
+
+                /*override fun onAnimationEnd(animation: Animator) {
+                    state = State.COMPLETED
+                    resetText()
+                    button.isEnabled = true
+                }*/
             })
         }.start()
     }
@@ -186,15 +206,6 @@ class LoadingButton(context: Context, attrs: AttributeSet? = null) : View(contex
     }
 
     //_____________________________________________________________________
-
-    private fun reset() {
-        if (downloadCompleted) {
-            Timer().schedule(2000) {
-                state = State.COMPLETED
-                resetText()
-            }
-        }
-    }
 
     private fun resetText() {
         text = resources.getString(Text.DOWNLOAD.text)

@@ -40,25 +40,13 @@ class MainFragment : Fragment() {
 
         loadingButton.setOnClickListener {
             if (option1) {
-                /*loadingButton.state = State.LOADING
-                startDownload("https://github.com/bumptech/glide")
-                loadingButton.startAnimation(loadingButton)
-                options = 1*/
                 downloadAndAnimation("https://github.com/bumptech/glide", 1, loadingButton)
             } else if (option2) {
-                /*loadingButton.state = State.LOADING
-                startDownload("https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter")
-                loadingButton.startAnimation(loadingButton)
-                options = 2*/
                 downloadAndAnimation(
                     "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter",
                     2, loadingButton
                 )
             } else if (option3) {
-                /*loadingButton.state = State.LOADING
-                startDownload("https://github.com/square/retrofit")
-                loadingButton.startAnimation(loadingButton)
-                options = 3*/
                 downloadAndAnimation("https://github.com/square/retrofit", 3, loadingButton)
             } else {
                 loadingButton.state = State.COMPLETED

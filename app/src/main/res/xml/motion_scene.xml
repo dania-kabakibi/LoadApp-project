@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
             android:text="TextView"
+            android:alpha="0"
             android:textColor="@color/dark_green"
             android:textSize="20sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/fileName_TextView"
@@ -47,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
             android:text="TextView"
+            android:alpha="0"
             android:textColor="@color/dark_green"
             android:textSize="20sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/status_TextView"
@@ -101,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
             android:text="TextView"
+            android:alpha="1"
             android:textColor="@color/dark_green"
             android:textSize="20sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/fileName_TextView"
@@ -113,6 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
             android:text="TextView"
+            android:alpha="1"
             android:textColor="@color/dark_green"
             android:textSize="20sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/status_TextView"
@@ -139,5 +143,5 @@
         app:autoTransition="animateToEnd"
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@id/start"
-        app:duration="2000"/>
+        app:duration="3000"/>
 </MotionScene>
